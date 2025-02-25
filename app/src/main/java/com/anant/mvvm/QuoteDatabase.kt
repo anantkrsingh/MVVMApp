@@ -1,0 +1,18 @@
+package com.anant.mvvm
+
+import android.content.Context
+import androidx.room.Database
+import androidx.room.RoomDatabase
+
+
+@Database(entities = [Quote::class], version = 1)
+abstract class QuoteDatabase: RoomDatabase() {
+    abstract fun quoteDao ():QuoteDao
+
+    companion object{
+        private  var INSTANCE:QuoteDatabase? = null;
+        fun getDatabase(context: Context) : QuoteDatabase{
+            
+        }
+    }
+}
